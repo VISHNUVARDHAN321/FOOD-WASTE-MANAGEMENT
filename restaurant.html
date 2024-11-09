@@ -1,0 +1,204 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<style>
+    img{
+        height: 200px;
+        width: 200px;
+        border:2px solid black;
+        background-image: url(imglogo.png);
+    }
+</style>
+<style>
+      body{
+      background-image: url(food.jpg);
+      background-position: center center;
+      background-size:cover;
+      background-attachment: fixed;
+    }
+    #ui{
+        background-color:#424446;
+        padding:60px;
+        margin-top: 30px;
+        border-radius: 30px;
+        opacity: 0.9;
+        
+    }
+    #ui label,h1,h2{
+        color:#c9eeda;
+        font-style: italic;
+        
+       
+       
+
+    }
+    #ui label{
+        font-size: 2rem;
+    }
+    #ui input{
+        color: rgb(55, 15, 201);
+        font-size: medium;
+    }
+</style>
+<meta name="viewport" content="width=500, initial-scale=1" />
+    </head>
+    <body>
+       
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-6">
+            <div id="ui">
+                <h1 align="center">REQUEST FORM</h1>
+            
+                <form class="form-group text-center" action="email1.php" method="post">
+                    <div class="row" >
+                        <div class="col-lg-6">
+                            <label>Restaurent name</label>
+                            <input type="text" placeholder="restaurent name" id="name" name="name" class="form-control" required>
+                            <br><br>
+                        
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Place</label>
+                            <input type="text" placeholder="place" id="place" name="place" class="form-control" required>
+                            <br><br>
+                          
+                        </div>
+                       
+                       
+                    </div>
+                    <label>Food type</label>
+                    <input type="text" placeholder="food type" id="ft" name="food" class="form-control" required><br>
+                    <br>
+                 
+                    <div class="col-lg-6">
+                        <label>Quantity</label>
+                        <input type="number" placeholder="quantity" id="quantity1" name="quantity" class="form-control" required><br>
+                        <br>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Phone number</label>
+                        <input type="number" placeholder="phone number" id="pn" name="phone" class="form-control" required><br>
+                        <br>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Email</label>
+                        <input type="email" placeholder="email" id="emails" name="email" class="form-control" required><br>
+                        <br>
+                    </div>
+                    <div class="col-lg-6">
+                        <label>Item Id</label>
+               
+                        <input type="text" placeholder="id" id="identity" class="form-control"><br>
+                        <br>
+                        <br>
+                        
+                    </div>
+                    
+        
+                      <input type="text" id="namebox" placeholder="Image Name">
+                      <img id="myimg"><label id="UpProgress"></label><br><br>
+
+                
+                  
+                
+                <div>
+                    <div id="imgdata">
+                <button id="select">SELECT IMAGE</button>
+                <button id="upload">UPLOAD IMAGE</button><br><br>
+            </div>
+                <button onclick="restaurent()" id="send" class="btn btn-primary btn-block btn-lg">SEND REQUEST</button>
+            </div>
+        </form>
+            </div>
+        </div>
+        <style>
+            #select{
+                color: rgb(53, 23, 221);
+                font-size: medium;
+                font-style: italic;
+                border-radius: 10px;
+                border: 2px solid aqua;
+            }
+            #upload{
+                color: rgb(53, 23, 221);
+                font-size: medium;
+                font-style: italic;
+                border-radius: 10px;
+                border: 2px solid aqua;
+            }
+            #imgdata{
+                display: flex;
+                margin-left: 17%;
+                justify-content: space-between;
+                margin-bottom: 10px;
+            }
+            #send{
+                border-radius: 15px;
+                font-size: larger;
+                font-size: 2rem;
+                font-style: oblique;
+            }
+        </style>
+        <div class="col-lg-3">
+            
+        </div>
+    </div>
+  </div>
+          
+  
+</div> 
+    <script>
+
+
+    function restaurent(){ 
+    
+       alert("Successfully request has been sent to ngo");
+        
+   }
+   var ImgName,ImgUrl;
+    var files=[];
+    var reader;
+
+
+document.getElementById("upload").onclick=function(){
+    ImgName = document.getElementById('namebox').value;
+    var uploadTask = firebase.storage().ref('Images/'+ImgName+".png").put(files[0]);
+  uploadTask.on('state_changed',function(snapshot){
+var progress=(snapshot.bytesTransferred/snapshot.totalBytes)*100;
+document.getElementById('UpProgress').innerHTML='Upload'+progress+'%';
+  },
+
+  function(error){
+    alert("error in the uploading image"+error);
+  },
+  function(){
+    uploadTask.snapshot.ref.getDownloadURL().then(function(url){
+ImgUrl = url;
+var m1=document.getElementById("name").value;
+        
+        var m2=document.getElementById("place").value;
+        var m3=document.getElementById("ft").value;
+        
+        var m4=document.getElementById("quantity1").value;
+        var m5=document.getElementById("pn").value;
+        var m6=document.getElementById("emails").value;
+        var m7=doc
+  alert("image added successfully")
+  }
+  );
+});
+}
+
+</script>
+
+    </body>
+</html>

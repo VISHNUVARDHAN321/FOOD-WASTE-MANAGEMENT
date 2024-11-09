@@ -1,0 +1,11 @@
+div{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+}
+@media(max-width:600px){
+    div{
+        height: 100px;
+        width: 100px;
+    }
+}

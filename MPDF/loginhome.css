@@ -1,0 +1,64 @@
+*{
+    margin:0px;
+    padding:0px;
+
+}
+body{
+    background-image:url(foodlog.jpeg) ;
+    background-size:cover;
+    background-position:center;
+    box-sizing:border-box ;
+    font-family:sans-serif;
+}
+.menu-bar{
+    background: rgb(15, 5, 73);
+    text-align: center;
+    margin-left:400px;
+    margin-right:400px;
+   }
+.menu-bar ul{
+    display:inline-flex;
+    list-style: none;
+    color:#fff;
+}
+.menu-bar ul li{
+    width:120px;
+    padding:15px;
+    margin: 15px;
+
+}
+.menu-bar ul li a{
+    text-decoration: none;
+    color:#fff;
+}
+.sub-menu{
+    display:none;
+}
+.menu-bar ul li:hover .sub-menu{
+    display:block;
+    position:absolute;
+    background: rgb(103, 101, 226);
+    margin-top:15px;
+    margin:left;
+}
+.menu-bar ul li:hover .sub-menu ul{ 
+ display:block;
+ margin:10px;
+}
+.menu-bar ul li:hover .sub-menu ul li{
+    width:70px;
+    padding:10px;
+    border-bottom:1px dotted #fff;
+    border-radius:0;
+    text-align:left;
+}
+.menu-bar ul li:hover .sub-menu ul li:last-child{
+    border-bottom:none;
+}
+.menu-bar ul li:hover .sub-menu ul li a:hover{
+color:#b2ff00;
+}
+
+.fa-angle-right{
+    float:right;
+}

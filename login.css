@@ -1,0 +1,104 @@
+/* Apply some basic styling to the form container */
+body{
+    /* background-color: #007bff; */
+    background-image: url("food.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: repeat-x;
+   
+}
+div {
+   
+    text-align: center;
+    margin-top: 50px;
+    /* border: 2px solid black; */
+  }
+  #container{
+    background: transparent;
+    width: 300px;
+    position: relative;
+    left: 33%;
+    top: 19%;
+    /* border: 2px solid black; */
+    border-radius: 80%;
+    
+  }
+  /* Style the form */
+  form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    /* background-image: url("logo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+    border-radius: 20px;
+    opacity: 0.9;
+    box-shadow: 5px 5px 10px #201e1e;
+  }
+  
+  /* Style the form header */
+  div form h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  /* Style form labels */
+  div form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 200px;;
+  }
+  
+  /* Style form input fields */
+  div form input[type="text"],
+  div form input[type="email"],
+  div form input[type="password"],
+  div form input[type="phone_no"]{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  /* Style the Register button */
+  div form button[name="Register"] {
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 35px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* Add hover effect to the Register button */
+  div form button[name="Register"]:hover {
+    background-color: #3969f0;
+    width: 20%;
+    border-radius: 40px;
+    color: rgb(44, 44, 37);
+    font-size: 15px;
+  }
+
+  #forget{
+     /* margin-top: -10px; */
+     padding-top: 20px;
+    /* text-align: end; */
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    margin-right: 7%;
+    text-decoration: none;
+    }
+ 

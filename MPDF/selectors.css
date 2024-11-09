@@ -1,0 +1,9 @@
+body{
+    background-color: blue;
+    border: solid black;
+    margin: 100%;
+}
+.p{
+    color: yellow;
+    background-color: red;
+}
